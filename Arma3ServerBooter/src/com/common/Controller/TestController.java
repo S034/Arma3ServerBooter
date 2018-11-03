@@ -1,4 +1,4 @@
-package com.common;
+package com.common.Controller;
 
 import org.apache.ibatis.io.ResolverUtil.Test;
 import org.springframework.beans.factory.annotation.Autowired;
