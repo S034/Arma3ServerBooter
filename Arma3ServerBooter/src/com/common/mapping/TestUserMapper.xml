@@ -3,6 +3,53 @@
 <mapper namespace="com.common.dao.TestUserDao">
 
     <select id="getUser" parameterType="com.common.Entity.TestUser" resultType="com.common.Entity.TestUser">
-        select * from test_user where name = #{name} and password= #{password}
+        select
+          * 
+        from
+          test_user 
+        where 
+          name=#{name} and password=#{password}
     </select> 
+    
+    <update id="passWord" parameterType="Map">
+        update
+          test_user 
+        set 
+          password=#{current} 
+        where
+          password=#{old} and id=1
+    </update> 
+    
+    <update id="serverFile" parameterType="Map">
+        update
+          server_file 
+        set
+          location=#{serverFile} 
+        where
+          id=1
+    </update> 
+    
+    <update id="extra" parameterType="Map">
+        update
+          extra 
+        set
+          extra=#{extra} 
+        where
+          id=1
+    </update> 
+    
+     <update id="detail" parameterType="Map">
+        update
+          detail 
+        set
+          serverName=#{serverName},
+          password=#{password},
+          adminPassword=#{adminPassword},
+          port=#{port},
+          maxPlayers=#{maxPlayers},
+          voN=#{voN}
+        where
+          id=1
+    </update> 
+    
 </mapper>
